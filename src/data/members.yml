@@ -27,7 +27,7 @@ members:
   - {tier: special, name: "FC Logistique", ko: "FC 로지스틱", sector: transport, url: "", match: ["FC 로지스틱", "FC Logistique"]}
   - {tier: special, name: "Hyosung TNC", ko: "효성 TNC", sector: industry, url: "https://www.hyosungtnc.com/en", match: ["효성"]}
   - {tier: special, name: "Hyundai Motor", ko: "현대자동차", sector: auto, url: "https://www.hyundai.com/fr/fr", match: ["현대자동차"]}
-  - {tier: special, name: "KEB Hana Bank", ko: "KEB 하나은행", sector: finance, url: "https://www.kebhana.com", match: ["하나은행", "하나외환"]}
+  - {tier: special, name: "KEB Hana Bank", ko: "KEB 하나은행", sector: finance, url: "https://global.1qbank.com/lounge/paris/et/index.html", match: ["하나은행", "하나외환"]}
   - {tier: special, name: "Kia", ko: "기아", sector: auto, url: "https://www.kia.com/fr/", match: ["기아자동차"]}
   - {tier: special, name: "KHNP – Korea Hydro & Nuclear Power", ko: "한국수력원자력", sector: energy, url: "https://www.khnp.co.kr/eng/index.do", match: ["한국수력원자력", "한수원"]}
   - {tier: special, name: "Office National du Tourisme Coréen", ko: "한국관광공사", sector: tourism, url: "https://french.visitkorea.or.kr/svc/main/index.do", match: ["관광공사"]}
