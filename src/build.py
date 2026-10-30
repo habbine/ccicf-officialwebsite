@@ -11,6 +11,7 @@ import hashlib
 import html
 import json
 import re
+import unicodedata
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -22,7 +23,7 @@ SRC = Path(__file__).resolve().parent
 OUT = SRC.parent
 SITE = "https://www.ccicf.kr"
 
-YEARS = ["2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017",
+YEARS = ["2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017",
          "2016", "2015", "2014", "2013", "2012", "2011", "2005-2010"]
 HERO = "https://static.wixstatic.com/media/dfe178_1431272aa6174bd29eac57c6dd2252ef~mv2.jpg"
 SOCIAL = [
@@ -54,6 +55,9 @@ UI = {
         "legal": "법적 고지", "privacy": "개인정보 처리방침", "rights": "© CCICF. All rights reserved.",
         "filter_label": "행사 유형", "filter_all": "전체", "filter_count": "{n}개 행사",
         "toc": "목차", "search_label": "행사 검색", "search_ph": "행사명, 장소, 연도 검색",
+        "act_intro": "CCICF는 세미나, 문화 행사, 대외 행사를 통해 회원사와 한불 양국의 경제인들이 만나는 자리를 만듭니다.",
+        "latest_h": "최근 행사", "types_h": "주요 활동", "see_n": "{n}개 행사 보기", "read_more": "자세히",
+        "older_years": "이전 연도 보기", "year_n": "{n}개",
         "archive_h": "전체 행사 찾기", "archive_p": "2005년부터 지금까지의 모든 행사를 유형과 검색어로 찾아보세요.",
         "no_results": "검색 결과가 없습니다.",
         "tiers": {"honor": "명예 회원", "special": "특별 회원", "corporate": "기업 회원",
@@ -82,6 +86,9 @@ UI = {
         "legal": "Mentions légales", "privacy": "Politique de confidentialité", "rights": "© CCICF. Tous droits réservés.",
         "filter_label": "Type d'événement", "filter_all": "Tous", "filter_count": "{n} événement(s)",
         "toc": "Sommaire", "search_label": "Rechercher un événement", "search_ph": "Nom, lieu, année…",
+        "act_intro": "Séminaires, événements culturels, forums et visites : la CCICF crée des occasions de rencontre entre ses membres et les acteurs économiques des deux pays.",
+        "latest_h": "Derniers événements", "types_h": "Nos activités", "see_n": "Voir les {n} événements", "read_more": "En savoir plus",
+        "older_years": "Voir les années précédentes", "year_n": "{n}",
         "archive_h": "Tous les événements", "archive_p": "Retrouvez tous les événements depuis 2005 par type ou par mot-clé.",
         "no_results": "Aucun résultat.",
         "tiers": {"honor": "Membres d'honneur", "special": "Membres spéciaux", "corporate": "Membres entreprises",
@@ -100,10 +107,10 @@ TITLE_KEYS = {
     "golf": ["골프"],
     "careers": ["취업", "창업", "채용", "job", "청년과 한국 기업"],
     "seminar": ["세미나", "설명회", "강연", "강의", "웨비나"],
-    "culture": ["미술관", "전시", "관람", "특별전", "컬렉션", "기획전", "음악회", "콘서트", "와인", "공연",
+    "culture": ["축제", "미술관", "전시", "관람", "특별전", "컬렉션", "기획전", "음악회", "콘서트", "와인", "공연",
                 "영화", "백주년", "아티스트", "오리엔트", "시대", "시음", "크루즈", "투어", "아트", "미술사"],
     "networking": ["송년", "신년", "총회", "갈라", "리셉션"],
-    "external": ["포럼", "시찰", "미팅", "박람회", "페어", "fair"],
+    "external": ["포럼", "시찰", "미팅", "박람회", "페어", "fair", "140 ans"],
 }
 BODY_KEYS = {"culture": ["미술관", "전시", "작품", "공연", "와인"], "seminar": ["세미나", "강연"]}
 CATS_BY_POS = {}   # slug -> categories in source order (filled while building Korean pages)
@@ -281,7 +288,9 @@ def render_body(body, lang, slug, title=""):
         if slug in YEARS:
             EVENTS[lang].append({"t": h3.get_text(strip=True), "m": meta_line, "y": slug,
                                  "c": cats, "id": ev_id, "d": art["data-date"], "p": pos,
-                                 "x": h3.get_text(" ") + " " + text.get_text(" ")})
+                                 "x": h3.get_text(" ") + " " + text.get_text(" "),
+                                 "img": (art.find("img") or {}).get("src", "") if art.find("img") else "",
+                                 "alt": art.find("img").get("alt", "") if art.find("img") else ""})
 
     # Accessible names for photo links.
     n = 0
@@ -548,25 +557,77 @@ def members_html(lang):
     return "".join(out)
 
 
-def archive_html(lang):
-    """All events across years, searchable and filterable (progressive enhancement: the list works without JS)."""
+def fold(text):
+    """Lower-case and drop Latin accents so 'seminaire' finds 'Séminaire'. Hangul is untouched."""
+    nfd = unicodedata.normalize("NFD", text.lower())
+    return unicodedata.normalize("NFC", "".join(c for c in nfd if unicodedata.category(c) != "Mn"))
+
+
+def activities_html(lang, md_body):
+    """Intro, latest events, activity-type cards linking to the filtered archive, then the archive."""
+    t = UI[lang]
+    root = LANGS[lang]["root"]
+    out = [f'<p class="act-intro">{t["act_intro"]}</p>']
+
+    latest = sorted([e for e in EVENTS[lang] if e["d"]], key=lambda e: e["d"], reverse=True)[:3]
+    if latest:
+        cards = "".join(
+            f'<li class="latest-card"><a href="{e["y"]}.html#{e["id"]}">'
+            + (f'<img src="{e["img"]}" alt="" loading="lazy">' if e["img"] else "")
+            + f'<span class="latest-t">{html.escape(e["t"])}</span><span class="arch-meta">{html.escape(e["m"])}</span></a></li>'
+            for e in latest)
+        out.append(f'<section aria-labelledby="latest-h"><h2 id="latest-h">{t["latest_h"]}</h2><ul class="latest">{cards}</ul></section>')
+
+    # The three Markdown sections map, in order, to these archive categories.
+    keys = ["seminar", "culture", "external"]
+    sections = re.split(r"^## ", md_body.strip(), flags=re.M)[1:]
+    counts = {k: sum(1 for e in EVENTS[lang] if k in e["c"]) for k in keys}
+    tiles = []
+    for key, sec in zip(keys, sections):
+        title, _, rest = sec.partition("\n")
+        img = re.search(r"!\[[^\]]*\]\(([^)]+)\)", rest)
+        paras = [p.strip() for p in re.sub(r"!\[[^\]]*\]\([^)]+\)", "", rest).split("\n\n") if p.strip()]
+        subtitle, body = (paras[0], paras[1:]) if paras else ("", [])
+        more = "".join(f"<p>{html.escape(p)}</p>" for p in body)
+        tiles.append(
+            f'<article class="type-card">'
+            + (f'<img src="{sized(img.group(1), 800, root)}" alt="" loading="lazy">' if img else "")
+            + f'<div class="type-body"><h3>{html.escape(title.strip())}</h3><p class="type-sub">{html.escape(subtitle)}</p>'
+            + (f'<details><summary>{t["read_more"]}</summary>{more}</details>' if more else "")
+            + f'<a class="type-link" href="?type={key}#archive">{t["see_n"].format(n=counts[key])} →</a></div></article>')
+    if tiles:
+        out.append(f'<section aria-labelledby="types-h"><h2 id="types-h">{t["types_h"]}</h2><div class="type-grid">{"".join(tiles)}</div></section>')
+    out.append(archive_html(lang))
+    return "".join(out)
+
+
+def archive_html(lang, open_years=3):
+    """All events across years: search (accent-insensitive), type filter, grouped by year.
+    Works without JavaScript (everything listed); with it, older years fold behind a button."""
     t = UI[lang]
     evs = sorted(EVENTS[lang], key=lambda e: e["d"] or "0000", reverse=True)
     cats = [c for c in t["cats"] if any(c in e["c"] for e in evs)]
     btns = [f'<button type="button" class="chip" data-filter="all" aria-pressed="true">{t["filter_all"]}</button>']
     btns += [f'<button type="button" class="chip" data-filter="{c}" aria-pressed="false">{t["cats"][c]}</button>' for c in cats]
-    items = "".join(
-        f'<li data-cats="{" ".join(e["c"])}" data-text="{html.escape((e["t"] + " " + e["m"] + " " + e["y"]).lower())}">'
-        f'<a href="{e["y"]}.html#{e["id"]}">{html.escape(e["t"])}</a>'
-        f'<span class="arch-meta">{html.escape(e["m"])}</span></li>'
-        for e in evs)
-    return f"""<section class="archive" aria-labelledby="archive-h">
+    groups = []
+    for i, y in enumerate([y for y in YEARS if any(e["y"] == y for e in evs)]):
+        ys = [e for e in evs if e["y"] == y]
+        items = "".join(
+            f'<li data-cats="{" ".join(e["c"])}" data-text="{html.escape(fold(e["t"] + " " + e["m"] + " " + e["y"]))}">'
+            f'<a href="{e["y"]}.html#{e["id"]}">{html.escape(e["t"])}</a>'
+            f'<span class="arch-meta">{html.escape(e["m"])}</span></li>' for e in ys)
+        label = "2005–2010" if y == "2005-2010" else y
+        groups.append(f'<section class="arch-year{" is-older" if i >= open_years else ""}" aria-labelledby="y-{y}">'
+                      f'<h3 id="y-{y}"><a href="{y}.html">{label}</a> <span class="year-n">{t["year_n"].format(n=len(ys))}</span></h3>'
+                      f'<ol class="arch-list">{items}</ol></section>')
+    return f"""<section class="archive" id="archive" aria-labelledby="archive-h">
 <h2 id="archive-h">{t['archive_h']}</h2>
 <p>{t['archive_p']}</p>
-<label class="search"><span>{t['search_label']}</span><input type="search" placeholder="{t['search_ph']}" autocomplete="off"></label>
+<label class="search"><span>{t['search_label']}</span><input type="search" name="q" placeholder="{t['search_ph']}" autocomplete="off"></label>
 <div class="filters" role="group" aria-label="{t['filter_label']}">{"".join(btns)}</div>
 <p class="filter-status" aria-live="polite" data-template="{html.escape(t['filter_count'])}" data-empty="{html.escape(t['no_results'])}"></p>
-<ol class="arch-list">{items}</ol>
+{"".join(groups)}
+<p class="more-years-wrap"><button type="button" class="more-years" hidden>{t['older_years']}</button></p>
 </section>"""
 
 
@@ -590,7 +651,7 @@ def main():
             rendered[slug] = (meta.get("title", slug), render_body(body, lang, slug, meta.get("title", slug)))
         for slug, (title, body_html) in rendered.items():
             if slug == "activities":
-                body_html += archive_html(lang)
+                body_html = activities_html(lang, load(lang, "activities")[1])
             if slug == "members":
                 body_html = members_html(lang)
             (cfg["out"] / f"{slug}.html").write_text(page(lang, slug, title, body_html), encoding="utf-8")

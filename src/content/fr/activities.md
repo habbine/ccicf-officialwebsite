@@ -1,24 +1,6 @@
 ---
 title: Activités
 ---
-
-- [2025](2025.html)
-- [2024](2024.html)
-- [2023](2023.html)
-- [2022](2022.html)
-- [2021](2021.html)
-- [2020](2020.html)
-- [2019](2019.html)
-- [2018](2018.html)
-- [2017](2017.html)
-- [2016](2016.html)
-- [2015](2015.html)
-- [2014](2014.html)
-- [2013](2013.html)
-- [2012](2012.html)
-- [2011](2011.html)
-- [2005-2010](2005-2010.html)
-
 ## Organisation de séminaires
 
 ![](https://static.wixstatic.com/media/dfe178_bb5862addea7471f943b75f6a5da689d~mv2.jpg)
@@ -49,8 +31,3 @@ Chaque année, la CCICF participe à de grands événements internationaux tels 
 
 Elle organise également des programmes de visites de sites industriels en région, afin de permettre à ses membres de découvrir plus directement la vie politique, culturelle et économique de la France.
 
-![](https://static.wixstatic.com/media/dfe178_80ca6c02f60d4a06b10feccc73b45fef~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_70696d5ba1204d38b59e2ae7c1433392~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_e5846ce66c4a4da19724742e54ba0d33~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_55d7136bc8e94785b421215b9bb11b20~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_9fef2479fd9741f4b089a7021d8d3863~mv2.jpg)

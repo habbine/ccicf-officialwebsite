@@ -1,24 +1,6 @@
 ---
 title: 활동
 ---
-
-- [2025](2025.html)
-- [2024](2024.html)
-- [2023](2023.html)
-- [2022](2022.html)
-- [2021](2021.html)
-- [2020](2020.html)
-- [2019](2019.html)
-- [2018](2018.html)
-- [2017](2017.html)
-- [2016](2016.html)
-- [2015](2015.html)
-- [2014](2014.html)
-- [2013](2013.html)
-- [2012](2012.html)
-- [2011](2011.html)
-- [2005-2010](2005-2010.html)
-
 ## 각종 세미나 주최
 
 ![](https://static.wixstatic.com/media/dfe178_bb5862addea7471f943b75f6a5da689d~mv2.jpg)
@@ -49,8 +31,3 @@ CCICF 한불상공회의소는 매년 한불 포럼 등 주요 국제 행사에 
 
 아울러 프랑스의 정치, 문화, 경제를 보다 직접적으로 체험하기 위해 각 지방의 산업 현장을 방문하는 산업시찰 프로그램도 기획하고 있습니다.
 
-![](https://static.wixstatic.com/media/dfe178_80ca6c02f60d4a06b10feccc73b45fef~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_70696d5ba1204d38b59e2ae7c1433392~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_e5846ce66c4a4da19724742e54ba0d33~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_55d7136bc8e94785b421215b9bb11b20~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_9fef2479fd9741f4b089a7021d8d3863~mv2.jpg)
