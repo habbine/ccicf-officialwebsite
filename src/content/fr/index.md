@@ -1,0 +1,45 @@
+---
+title: Chambre de Commerce et d'Industrie Corée France
+---
+
+# CCICF
+
+Chambre de Commerce & d'Industrie
+Corée France
+
+![](https://static.wixstatic.com/media/dfe178_1431272aa6174bd29eac57c6dd2252ef~mv2.jpg)
+
+Forte d'une quarantaine de membres, principalement des entreprises coréennes implantées en France, la Chambre de Commerce et d'Industrie Corée France (CCICF) joue un rôle emblématique dans la coopération économique entre la Corée et la France.
+
+En 2026, année Eulsa, nous redoublerons d'efforts pour contribuer plus encore à l'insertion active des Coréens dans la vie professionnelle et sociale en France.
+
+[Découvrir les activités de la CCICF](activities.html)
+
+## Événements 2025/2026
+
+![](https://static.wixstatic.com/media/aeec53_caa45cd911234f819cffc39024ec5f78~mv2.png)
+![](https://static.wixstatic.com/media/aeec53_bbb9dac61c1f4f63b96fb6946ff893f2~mv2.jpg)
+![](https://static.wixstatic.com/media/aeec53_da4f7af40c434c7faba7dd1df137d048~mv2.png)
+![](https://static.wixstatic.com/media/aeec53_b0447fe2144f42e8879e4d130eb0e8d2~mv2.png)
+![](https://static.wixstatic.com/media/aeec53_8b683417c1ff4423beab031f11542e47~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_afc2e3d5e6a845bb9469bf7e62a991d5~mv2.jpg)
+![](https://static.wixstatic.com/media/aeec53_806dcfe6be9a47eeaef648b39abf2754~mv2.jpg)
+![](https://static.wixstatic.com/media/aeec53_4bdf7ccb47ed4e8fa6ba14624753e2f1~mv2.jpeg)
+![](https://static.wixstatic.com/media/aeec53_3484c86628c64ff086c30359476027cb~mv2.jpeg)
+![](https://static.wixstatic.com/media/dfe178_77d1ce1399084a55b72bb903cebd93be~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_f97a9817cf8e4ddb829baa9703b8bad8~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_e3f381d74f3842af8ad74a8ef69ad6db~mv2.jpg)
+
+Lancement des comptes officiels LinkedIn et Instagram de la Chambre de Commerce et d'Industrie Corée France
+
+<!--FOLLOW-->
+
+![](https://static.wixstatic.com/media/dfe178_b8efcf5af72d4a55bf4a100895349358~mv2.png)
+![](https://static.wixstatic.com/media/dfe178_f587ed6ccaed4460948a866145d086a6~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_b85090c549d04a6eb3a589bec8a43f67~mv2.png)
+![](https://static.wixstatic.com/media/dfe178_a5a1cb900e0b4ba580c870545591813f~mv2.png)
+![](https://static.wixstatic.com/media/dfe178_80ca6c02f60d4a06b10feccc73b45fef~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_70696d5ba1204d38b59e2ae7c1433392~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_e5846ce66c4a4da19724742e54ba0d33~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_55d7136bc8e94785b421215b9bb11b20~mv2.jpg)
+![](https://static.wixstatic.com/media/dfe178_9fef2479fd9741f4b089a7021d8d3863~mv2.jpg)
