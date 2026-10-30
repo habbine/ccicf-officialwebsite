@@ -10,7 +10,6 @@ Ce site est une vitrine d'information. Il ne comporte ni formulaire, ni compte u
 
 Comme tout serveur web, l'hébergeur GitHub, Inc. enregistre des données techniques de connexion (notamment l'adresse IP) afin d'assurer la sécurité et le bon fonctionnement du service. Ce traitement est réalisé par GitHub selon sa [déclaration de confidentialité](https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement), et peut impliquer un transfert de données vers les États-Unis.
 
-Certaines photographies sont encore servies depuis les serveurs de Wix.com Ltd., qui reçoit à cette occasion l'adresse IP du visiteur. <span class="todo">Cette mention sera supprimée une fois les images rapatriées sur ce site.</span>
 
 Les polices de caractères sont hébergées sur ce site : aucune donnée n'est transmise à Google.
 

@@ -253,7 +253,7 @@ def render_body(body, lang, slug, title=""):
         if media.contents:
             art.append(media)
         else:
-            art["class"] = "event no-media"
+            art["class"] = ["event", "no-media"]
         art.append(text)
         pos = len(soup.find_all("article", attrs={"data-pos": True}))
         art["data-pos"] = str(pos)

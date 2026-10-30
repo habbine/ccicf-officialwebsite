@@ -17,18 +17,43 @@ CCICF 한불상공회의소는 프랑스에 진출한 한국 기업들을 중심
 
 ## 2025/2026년 행사
 
-![](https://static.wixstatic.com/media/aeec53_caa45cd911234f819cffc39024ec5f78~mv2.png)
-![](https://static.wixstatic.com/media/aeec53_bbb9dac61c1f4f63b96fb6946ff893f2~mv2.jpg)
-![](https://static.wixstatic.com/media/aeec53_da4f7af40c434c7faba7dd1df137d048~mv2.png)
-![](https://static.wixstatic.com/media/aeec53_b0447fe2144f42e8879e4d130eb0e8d2~mv2.png)
-![](https://static.wixstatic.com/media/aeec53_8b683417c1ff4423beab031f11542e47~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_afc2e3d5e6a845bb9469bf7e62a991d5~mv2.jpg)
-![](https://static.wixstatic.com/media/aeec53_806dcfe6be9a47eeaef648b39abf2754~mv2.jpg)
-![](https://static.wixstatic.com/media/aeec53_4bdf7ccb47ed4e8fa6ba14624753e2f1~mv2.jpeg)
-![](https://static.wixstatic.com/media/aeec53_3484c86628c64ff086c30359476027cb~mv2.jpeg)
-![](https://static.wixstatic.com/media/dfe178_77d1ce1399084a55b72bb903cebd93be~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_f97a9817cf8e4ddb829baa9703b8bad8~mv2.jpg)
-![](https://static.wixstatic.com/media/dfe178_e3f381d74f3842af8ad74a8ef69ad6db~mv2.jpg)
+![‘France-Corée : 140 ans d’histoire et d’amitié partagées’ 행사 연설](https://static.wixstatic.com/media/aeec53_caa45cd911234f819cffc39024ec5f78~mv2.png)
+![‘France-Corée : 140 ans’ 행사 패널 토론, 2026년 10월 16일](https://static.wixstatic.com/media/aeec53_bbb9dac61c1f4f63b96fb6946ff893f2~mv2.jpg)
+![박람회 강연장의 CCICF 발표](https://static.wixstatic.com/media/aeec53_da4f7af40c434c7faba7dd1df137d048~mv2.png)
+![박람회에서 진행된 CCICF 사무총장 발표](https://static.wixstatic.com/media/aeec53_b0447fe2144f42e8879e4d130eb0e8d2~mv2.png)
+![재불한인여성회 ‘사랑의 김치 나눔 축제’ 포스터](https://static.wixstatic.com/media/aeec53_8b683417c1ff4423beab031f11542e47~mv2.jpg)
+![CCICF E-invoicing 세미나 포스터](https://static.wixstatic.com/media/dfe178_afc2e3d5e6a845bb9469bf7e62a991d5~mv2.jpg)
+![세미나 참석자들](https://static.wixstatic.com/media/aeec53_806dcfe6be9a47eeaef648b39abf2754~mv2.jpg)
+![파리 시청 앞 단체 사진](https://static.wixstatic.com/media/aeec53_4bdf7ccb47ed4e8fa6ba14624753e2f1~mv2.jpeg)
+![파리 시청 앞 가족 참가자 단체 사진](https://static.wixstatic.com/media/aeec53_3484c86628c64ff086c30359476027cb~mv2.jpeg)
+![CCICF 제22회 연례총회 안내, Salon Grand Opéra](https://static.wixstatic.com/media/dfe178_77d1ce1399084a55b72bb903cebd93be~mv2.jpg)
+![제22회 연례총회 진행 모습](https://static.wixstatic.com/media/dfe178_f97a9817cf8e4ddb829baa9703b8bad8~mv2.jpg)
+![제22회 연례총회 회의장](https://static.wixstatic.com/media/dfe178_e3f381d74f3842af8ad74a8ef69ad6db~mv2.jpg)
+
+### 사랑의 김치 나눔 축제 (재불한인여성회)
+
+재불한인여성회(KOWIN France), 한국문화원, CCICF가 함께하는 행사입니다.
+
+- **김치 나눔 축제:** 2026년 6월 13일(토) 12시–14시, 한국문화원 (20 rue la Boétie, 75008 Paris)
+- **온라인 참가 신청:** 선착순 300명, 5월 31일까지
+- **김치 봉사자 모집:** 배추절임·속재료 2026년 6월 11일(목), 버무리기·포장 2026년 6월 12일(금), Marne-la-Vallée (봉사자 별도 안내)
+- **문의 및 신청:** [infokowinfrance@gmail.com](mailto:infokowinfrance@gmail.com)
+
+### CCICF E-invoicing 세미나
+
+- **일시:** 2026년 4월 28일, 17:00–18:30
+- **장소:** 주프랑스 대한민국 영사관 (Consulat de Corée du Sud en France), 22 Avenue d'Iéna, 75116 Paris
+
+### France-Corée : 140 ans d'histoire et d'amitié partagées
+
+- **일시:** 2026년 10월 16일(금)
+
+### 제22회 연례총회
+
+- **장소:** Salon Grand Opéra
+
+
+## 소셜 미디어
 
 주 프랑스 한불 상공회의소 공식 링크딘 및 인스타그램 계정 개시
 

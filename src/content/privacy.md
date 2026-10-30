@@ -10,7 +10,6 @@ title: 개인정보 처리방침
 
 호스팅 업체인 GitHub, Inc.는 서비스의 보안과 운영을 위해 IP 주소 등 기술적 접속 정보를 기록합니다. 이 처리는 GitHub의 [개인정보 보호정책](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)에 따르며, 미국으로의 정보 이전이 포함될 수 있습니다.
 
-일부 사진은 현재 Wix.com Ltd.의 서버에서 제공되며, 이때 방문자의 IP 주소가 Wix에 전달됩니다. <span class="todo">이미지를 이 사이트로 옮긴 후 이 항목을 삭제합니다.</span>
 
 글꼴은 이 사이트에서 직접 제공되며, Google에 정보가 전달되지 않습니다.
 
