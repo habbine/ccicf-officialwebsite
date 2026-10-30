@@ -32,8 +32,7 @@ CCICF 한불상공회의소는 프랑스에 진출한 한국 기업들을 중심
 
 주 프랑스 한불 상공회의소 공식 링크딘 및 인스타그램 계정 개시
 
-- [https://www.linkedin.com/in/ccicf/](https://www.linkedin.com/in/ccicf/)
-- [https://www.instagram.com/ccicf_official/](https://www.instagram.com/ccicf_official/)
+<!--FOLLOW-->
 
 ![](https://static.wixstatic.com/media/dfe178_b8efcf5af72d4a55bf4a100895349358~mv2.png)
 ![](https://static.wixstatic.com/media/dfe178_f587ed6ccaed4460948a866145d086a6~mv2.jpg)

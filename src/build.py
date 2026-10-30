@@ -39,6 +39,21 @@ DESCRIPTION = ("CCICF 주 프랑스 한불상공회의소는 프랑스에 진출
                "한 한불 양국의 경제 협력을 위해 노력하고 있습니다.")
 
 
+SOCIAL = [
+    ("LinkedIn", "https://www.linkedin.com/in/ccicf/", "@ccicf"),
+    ("Instagram", "https://www.instagram.com/ccicf_official/", "@ccicf_official"),
+]
+
+
+def follow_html(variant=""):
+    links = "".join(
+        f'<a class="follow-btn" href="{url}" target="_blank" rel="noopener" '
+        f'aria-label="CCICF {name} 팔로우 (새 창)"><span class="follow-name">{name}</span>'
+        f'<span class="follow-handle">{handle}</span><span class="follow-cta" aria-hidden="true">팔로우 →</span></a>'
+        for name, url, handle in SOCIAL)
+    return f'<div class="follow {variant}">{links}</div>'
+
+
 def sized(url, w=1200):
     """Return a resized Wix CDN URL for display; original stays available."""
     m = re.match(r"https://static\.wixstatic\.com/media/([^/]+)$", url)
@@ -141,7 +156,9 @@ def render_body(body, slug, title=""):
             nxt = node.next_sibling
             grid.append(node.extract())
             node = nxt
-    return str(soup)
+    out = str(soup)
+    out = re.sub(r"(<p>)?\s*<!--FOLLOW-->\s*(</p>)?", follow_html(), out)
+    return out
 
 
 def nav_html(current):
@@ -227,9 +244,8 @@ def page(slug, title, body_html, home=False):
       General enquiry : <a href="mailto:contact@ccicf.kr">contact@ccicf.kr</a></p>
     </div>
     <div>
-      <h2>Follow</h2>
-      <p><a href="https://www.linkedin.com/in/ccicf/" rel="noopener">LinkedIn</a><br>
-      <a href="https://www.instagram.com/ccicf_official/" rel="noopener">Instagram</a></p>
+      <h2>Follow us</h2>
+      {follow_html("follow-foot")}
     </div>
   </div>
   <div class="wrap copy">Copyright CCICF All rights reserved</div>
@@ -255,7 +271,10 @@ def home_page():
     <p class="hero-cta"><a class="btn" href="activities.html">활동 보기</a><a class="btn ghost" href="greetings.html">인사말</a></p>
   </div>
 </section>"""
-    return page("index", meta.get("title", ""), hero + f'<div class="wrap content home-body">{rendered}</div>', home=True)
+    band = (f'<section class="follow-band"><div class="wrap follow-band-inner">'
+            f'<div><h2>CCICF 소식 받기</h2><p>행사 일정과 활동 소식을 LinkedIn과 Instagram에서 확인하세요.</p></div>'
+            f'{follow_html()}</div></section>')
+    return page("index", meta.get("title", ""), hero + band + f'<div class="wrap content home-body">{rendered}</div>', home=True)
 
 
 def main():
