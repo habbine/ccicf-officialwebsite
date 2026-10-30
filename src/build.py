@@ -28,7 +28,6 @@ NAV = [
     ("오시는 길", "contact"),
 ]
 
-FAVICON = "https://static.wixstatic.com/media/dfe178_efca6ec1cf404eb188f0182b93244469~mv2.jpg"
 HERO = "https://static.wixstatic.com/media/dfe178_1431272aa6174bd29eac57c6dd2252ef~mv2.jpg"
 DESCRIPTION = ("CCICF 주 프랑스 한불상공회의소는 프랑스에 진출한 한국 기업들을 중심으로 "
                "한 한불 양국의 경제 협력을 위해 노력하고 있습니다.")
@@ -170,7 +169,8 @@ def page(slug, title, body_html, home=False):
 <meta property="og:description" content="{html.escape(DESCRIPTION)}">
 <meta property="og:image" content="{sized(HERO, 1200)}">
 <meta property="og:type" content="website">
-<link rel="icon" href="{sized(FAVICON, 192)}">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@ def page(slug, title, body_html, home=False):
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site-head">
   <div class="wrap bar">
-    <a class="brand" href="index.html"><span class="mark">CCICF</span><span class="name">주 프랑스 한불상공회의소</span></a>
+    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="CCICF — Chambre de Commerce &amp; d'Industrie Corée France" width="802" height="296"><span class="name">주 프랑스<br>한불상공회의소</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
     <nav id="site-nav" class="site-nav" aria-label="주 메뉴"><ul>{nav_html(slug)}</ul></nav>
   </div>
@@ -191,7 +191,7 @@ def page(slug, title, body_html, home=False):
 <footer class="site-foot">
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-brand">CCICF</p>
+      <p class="foot-logo"><img src="assets/img/logo.png" alt="CCICF" width="802" height="296" loading="lazy"></p>
       <p>Chambre de Commerce et d'Industrie Corée France<br>주 프랑스 한불상공회의소</p>
     </div>
     <div>
