@@ -49,7 +49,7 @@ members:
   - {tier: corporate, name: "Export-Import Bank of Korea", ko: "한국수출입은행", sector: finance, url: "https://www.koreaexim.go.kr/index", match: ["수출입은행"]}
   - {tier: corporate, name: "Korean Register", ko: "한국선급", sector: transport, url: "https://www.krs.co.kr/kor/", match: ["한국선급"]}
   - {tier: corporate, name: "K-SURE – Korea Trade Insurance Corporation", ko: "한국무역보험공사", sector: finance, url: "https://www.ksure.or.kr", match: ["무역보험"]}
-  - {tier: corporate, name: "Kumho Tire", ko: "금호타이어", sector: auto, url: "", match: ["금호"]}
+  - {tier: corporate, name: "Kumho Tire", ko: "금호타이어", sector: auto, url: "https://kumhotire.fr/fr/index.do", match: ["금호"]}
   - {tier: corporate, name: "LX Pantos", ko: "LX판토스", sector: transport, url: "https://www.lxpantos.com/en/main.do", match: ["판토스"]}
   - {tier: corporate, name: "NH Nonghyup", ko: "농협", sector: finance, url: "https://www.nonghyup.com/eng/nacf/current/organization01.do", match: ["농협"]}
   - {tier: corporate, name: "Pacific Creation", ko: "퍼시픽크리에이션", sector: "", url: "", match: ["퍼시픽"]}
