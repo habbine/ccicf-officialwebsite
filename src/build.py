@@ -31,7 +31,7 @@ NAV = [
     ("소개", [("인사말", "greetings"), ("조직", "governance"), ("정관", "bylaws")]),
     ("회원사", "members"),
     ("활동", "activities"),
-    ("오시는 길", "contact"),
+    ("연락처", "contact"),
 ]
 
 HERO = "https://static.wixstatic.com/media/dfe178_1431272aa6174bd29eac57c6dd2252ef~mv2.jpg"
@@ -217,8 +217,8 @@ def page(slug, title, body_html, home=False):
       <p>Chambre de Commerce et d'Industrie Corée France<br>주 프랑스 한불상공회의소</p>
     </div>
     <div>
-      <h2>Address</h2>
-      <p>57 Quai de Grenelle<br>75015 Paris, France</p>
+      <h2>Postal address</h2>
+      <p>57 Quai de Grenelle<br>75015 Paris, France<br><a href="contact.html">문의는 이메일로</a></p>
     </div>
     <div>
       <h2>Email</h2>
