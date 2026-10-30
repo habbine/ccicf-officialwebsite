@@ -53,7 +53,7 @@ members:
   - {tier: corporate, name: "LX Pantos", ko: "LX판토스", sector: transport, url: "https://www.lxpantos.com/en/main.do", match: ["판토스"]}
   - {tier: corporate, name: "NH Nonghyup", ko: "농협", sector: finance, url: "https://www.nonghyup.com/eng/nacf/current/organization01.do", match: ["농협"]}
   - {tier: corporate, name: "Pacific Creation", ko: "퍼시픽크리에이션", sector: "", url: "", match: ["퍼시픽"]}
-  - {tier: corporate, name: "Suhyup", ko: "수협", sector: finance, url: "https://en.suhyup.co.kr/suhyup-en/773/subview.do", match: ["수협"]}
+  - {tier: corporate, name: "Suhyup", ko: "수협", sector: finance, url: "https://www.suhyup.co.kr/sites/suhyup-en/index.do", match: ["수협"]}
 
   # Membres entrepreneurs individuels
   - {tier: entrepreneur, name: "Achillas", ko: "아킬라스", sector: "", url: "", match: ["아킬라스"]}
