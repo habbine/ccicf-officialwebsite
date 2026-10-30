@@ -57,7 +57,7 @@ def load(slug):
     return meta, body
 
 
-def render_body(body, slug):
+def render_body(body, slug, title=""):
     raw = markdown.markdown(body, extensions=["extra", "sane_lists"])
     soup = BeautifulSoup(raw, "html.parser")
 
@@ -113,6 +113,21 @@ def render_body(body, slug):
         else:
             art["class"] = "event no-media"
         art.append(text)
+
+    # Accessible names for photo links: alt text when the source gave none.
+    n = 0
+    for a in soup.find_all("a", class_="img-link"):
+        img = a.find("img")
+        if img.get("alt", "").strip():
+            continue
+        art = a.find_parent("article")
+        if art and art.find("h3"):
+            img["alt"] = f"{art.find('h3').get_text(strip=True)} 사진"
+        else:
+            n += 1
+            img["alt"] = f"{title} 사진 {n}"
+    for a in soup.find_all("a", class_="img-link"):
+        a["aria-label"] = f"{a.find('img')['alt']} (원본 크게 보기, 새 창)"
 
     # Wrap runs of event cards into a grid.
     for art in soup.find_all("article", class_="event"):
@@ -231,7 +246,7 @@ def home_page():
     body = re.sub(r"^# CCICF\s*\n", "", body.strip() + "\n", count=1)
     body = re.sub(r"^Chambre de Commerce & d'Industrie\s*\nCorée France\s*\n", "", body.lstrip(), count=1)
     body = body.lstrip().replace(f"![]({HERO})", "", 1)
-    rendered = render_body(body, "index")
+    rendered = render_body(body, "index", "CCICF 행사")
     hero = f"""<section class="hero" style="--hero:url('{sized(HERO, 1900)}')">
   <div class="wrap hero-inner">
     <p class="eyebrow">Chambre de Commerce et d'Industrie Corée France</p>
@@ -250,7 +265,7 @@ def main():
             out = home_page()
         else:
             meta, body = load(slug)
-            out = page(slug, meta.get("title", slug), render_body(body, slug))
+            out = page(slug, meta.get("title", slug), render_body(body, slug, meta.get("title", slug)))
         (OUT / f"{slug}.html").write_text(out, encoding="utf-8")
     # Old Wix URLs (without .html) keep working on GitHub Pages via folder index redirects.
     legacy = {"copy-of-2024%EB%85%84-1": "2025", "copy-of-2022%EB%85%84-1": "2024",
