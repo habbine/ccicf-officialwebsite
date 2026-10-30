@@ -175,7 +175,8 @@ def page(slug, title, body_html, home=False):
 <meta property="og:description" content="{html.escape(DESCRIPTION)}">
 <meta property="og:image" content="{sized(HERO, 1200)}">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -186,7 +187,7 @@ def page(slug, title, body_html, home=False):
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site-head">
   <div class="wrap bar">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="CCICF — Chambre de Commerce &amp; d'Industrie Corée France" width="802" height="296"><span class="name">주 프랑스<br>한불상공회의소</span></a>
+    <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="CCICF — Chambre de Commerce &amp; d'Industrie Corée France" width="397" height="144"><span class="name">주 프랑스<br>한불상공회의소</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
     <nav id="site-nav" class="site-nav" aria-label="주 메뉴"><ul>{nav_html(slug)}</ul></nav>
   </div>
@@ -197,7 +198,7 @@ def page(slug, title, body_html, home=False):
 <footer class="site-foot">
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-logo"><img src="assets/img/logo.png" alt="CCICF" width="802" height="296" loading="lazy"></p>
+      <p class="foot-logo"><img src="assets/img/logo.svg" alt="CCICF" width="397" height="144" loading="lazy"></p>
       <p>Chambre de Commerce et d'Industrie Corée France<br>주 프랑스 한불상공회의소</p>
     </div>
     <div>
