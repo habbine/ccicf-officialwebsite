@@ -1486,3 +1486,28 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .lang-full { display: none; }
   .bar { position: relative; }
 }
+
+/* Members */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.members-intro { font-size: 17px; max-width: 760px; color: var(--ink-soft); margin: 0 0 28px; }
+.honor-band { background: var(--paper-2); border-radius: var(--radius); padding: 8px 24px 24px; margin: 0 0 36px; border-top: 4px solid var(--brand-red); }
+.content .honor-band h2 { border: 0; margin-top: 20px; }
+.honor-list { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.member-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-bottom: 8px; }
+.tier-special .member-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.member-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.member-card[hidden], section.tier[hidden] { display: none; }
+.member-card.tier-special { border-top: 4px solid var(--brand-blue); padding: 22px 24px; }
+.member-card.tier-honor { border-color: transparent; }
+.content .member-card h3 { margin: 0; font-size: 17px; line-height: 1.4; color: var(--navy); }
+.tier-special .member-card h3, .member-card.tier-honor h3 { font-size: 19px; }
+.m-sub { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.m-sector { margin: 4px 0 0; font-size: 13px; font-weight: 500; color: var(--brand-blue); }
+.m-sector::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--brand-red); margin-right: 7px; vertical-align: 1px; }
+.m-site { margin-top: auto; padding-top: 10px; font-size: 14px; font-weight: 500; }
+.m-events { font-size: 14px; border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
+.m-events summary { cursor: pointer; font-weight: 500; color: var(--navy); min-height: 32px; display: flex; align-items: center; }
+.m-events ul { list-style: none; padding: 0; margin: 6px 0 0; }
+.m-events li { display: flex; flex-direction: column; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.m-events li:last-child { border-bottom: 0; }
+.tier-entrepreneur .member-card, .tier-individual .member-card { padding: 14px 18px; }

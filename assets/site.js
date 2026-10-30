@@ -37,6 +37,9 @@
         el.hidden = !ok;
         if (ok) shown++;
       });
+      scope.querySelectorAll('section.tier').forEach(function (sec) {
+        sec.hidden = !sec.querySelector('.member-card:not([hidden])');
+      });
       if (status) {
         var empty = status.getAttribute('data-empty');
         status.textContent = (shown === 0 && empty) ? empty : status.getAttribute('data-template').replace('{n}', shown);
@@ -54,7 +57,7 @@
   var archive = document.querySelector('.archive');
   if (archive) setup(archive, Array.prototype.slice.call(archive.querySelectorAll('.arch-list li')));
   var content = document.querySelector('.content');
-  var cards = document.querySelectorAll('.events .event');
+  var cards = document.querySelectorAll('.events .event, .member-grid .member-card');
   if (content && cards.length && content.querySelector(':scope > .filters')) {
     setup(content, Array.prototype.slice.call(cards));
   }

@@ -56,6 +56,11 @@ UI = {
         "toc": "목차", "search_label": "행사 검색", "search_ph": "행사명, 장소, 연도 검색",
         "archive_h": "전체 행사 찾기", "archive_p": "2005년부터 지금까지의 모든 행사를 유형과 검색어로 찾아보세요.",
         "no_results": "검색 결과가 없습니다.",
+        "tiers": {"honor": "명예 회원", "special": "특별 회원", "corporate": "기업 회원",
+                  "entrepreneur": "개인사업자 회원", "individual": "개인 회원"},
+        "members_intro": "CCICF는 프랑스에 진출한 한국 기업과 기관, 한불 교류에 참여하는 전문가들이 함께하는 상공회의소입니다.",
+        "sector_label": "업종", "website": "공식 웹사이트", "member_events": "CCICF와 함께한 행사 {n}건",
+        "member_count": "{n}개 회원사",
         "cats": {"seminar": "세미나·설명회", "culture": "문화 행사", "golf": "골프", "careers": "취업·창업",
                  "networking": "총회·송년회", "external": "대외 행사·시찰"},
     },
@@ -79,6 +84,11 @@ UI = {
         "toc": "Sommaire", "search_label": "Rechercher un événement", "search_ph": "Nom, lieu, année…",
         "archive_h": "Tous les événements", "archive_p": "Retrouvez tous les événements depuis 2005 par type ou par mot-clé.",
         "no_results": "Aucun résultat.",
+        "tiers": {"honor": "Membres d'honneur", "special": "Membres spéciaux", "corporate": "Membres entreprises",
+                  "entrepreneur": "Membres entrepreneurs individuels", "individual": "Membres individuels"},
+        "members_intro": "La CCICF réunit des entreprises et institutions coréennes implantées en France, ainsi que des professionnels engagés dans les échanges franco-coréens.",
+        "sector_label": "Secteur", "website": "Site officiel", "member_events": "{n} événement(s) avec la CCICF",
+        "member_count": "{n} membre(s)",
         "cats": {"seminar": "Séminaires", "culture": "Culture", "golf": "Golf", "careers": "Emploi & création",
                  "networking": "Assemblées & galas", "external": "Forums & visites"},
     },
@@ -270,7 +280,8 @@ def render_body(body, lang, slug, title=""):
         art["id"] = ev_id
         if slug in YEARS:
             EVENTS[lang].append({"t": h3.get_text(strip=True), "m": meta_line, "y": slug,
-                                 "c": cats, "id": ev_id, "d": art["data-date"]})
+                                 "c": cats, "id": ev_id, "d": art["data-date"], "p": pos,
+                                 "x": h3.get_text(" ") + " " + text.get_text(" ")})
 
     # Accessible names for photo links.
     n = 0
@@ -474,6 +485,69 @@ def home_page(lang):
     return page(lang, "index", meta.get("title", ""), hero + band + f'<div class="wrap content home-body">{rendered}</div>', home=True)
 
 
+def load_members():
+    data = yaml.safe_load((SRC / "data" / "members.yml").read_text(encoding="utf-8"))
+    return data["sectors"], data["members"]
+
+
+def member_events(member, lang):
+    """Events whose Korean text names the member; returned in the requested language."""
+    keys = member.get("match") or []
+    if not keys:
+        return []
+    hits = [(e["y"], e["p"]) for e in EVENTS["ko"] if any(k in e["x"] for k in keys)]
+    by_pos = {(e["y"], e["p"]): e for e in EVENTS[lang]}
+    evs = [by_pos[h] for h in hits if h in by_pos]
+    return sorted(evs, key=lambda e: e["d"] or "0000", reverse=True)
+
+
+def members_html(lang):
+    t = UI[lang]
+    sectors, members = load_members()
+    def names(m):
+        # Korean page leads with the Korean name, French page with the official name.
+        return (m["ko"], m["name"]) if lang == "ko" else (m["name"], m["ko"])
+    def card(m, tier):
+        main, sub = names(m)
+        sec = m.get("sector") or ""
+        parts = [f'<h3>{html.escape(main)}</h3>']
+        if sub and sub != main:
+            sub_lang = ' lang="ko"' if lang == "fr" else ""
+            parts.append(f'<p class="m-sub"{sub_lang}>{html.escape(sub)}</p>')
+        if sec:
+            parts.append(f'<p class="m-sector"><span class="visually-hidden">{t["sector_label"]} : </span>{sectors[sec][lang]}</p>')
+        links = []
+        if m.get("url"):
+            links.append(f'<a class="m-site" href="{html.escape(m["url"])}" target="_blank" rel="noopener" '
+                         f'aria-label="{html.escape(main)} — {t["website"]} ({t["photo_open"].split(",")[-1].strip()})">{t["website"]} ↗</a>')
+        evs = member_events(m, lang)
+        if evs:
+            items = "".join(f'<li><a href="{e["y"]}.html#{e["id"]}">{html.escape(e["t"])}</a>'
+                            f'<span class="arch-meta">{html.escape(e["m"])}</span></li>' for e in evs)
+            links.append(f'<details class="m-events"><summary>{t["member_events"].format(n=len(evs))}</summary><ul>{items}</ul></details>')
+        parts += links
+        return f'<article class="member-card tier-{tier}" data-cats="{sec}">{"".join(parts)}</article>'
+    out = [f'<p class="members-intro">{t["members_intro"]}</p>']
+    honor = [m for m in members if m["tier"] == "honor"]
+    rest = [m for m in members if m["tier"] != "honor"]
+    if honor:
+        out.append(f'<section class="honor-band" aria-labelledby="tier-honor"><h2 id="tier-honor">{t["tiers"]["honor"]}</h2>'
+                   f'<div class="honor-list">{"".join(card(m, "honor") for m in honor)}</div></section>')
+    present = [k for k in sectors if any(m.get("sector") == k for m in rest)]
+    btns = [f'<button type="button" class="chip" data-filter="all" aria-pressed="true">{t["filter_all"]}</button>']
+    btns += [f'<button type="button" class="chip" data-filter="{k}" aria-pressed="false">{sectors[k][lang]}</button>' for k in present]
+    out.append(f'<div class="filters" role="group" aria-label="{t["sector_label"]}">{"".join(btns)}</div>'
+               f'<p class="filter-status" aria-live="polite" data-template="{html.escape(t["member_count"])}"></p>')
+    for tier in ["special", "corporate", "entrepreneur", "individual"]:
+        group = [m for m in rest if m["tier"] == tier]
+        if not group:
+            continue
+        group.sort(key=lambda m: names(m)[0].lower())
+        out.append(f'<section class="tier tier-{tier}" aria-labelledby="tier-{tier}"><h2 id="tier-{tier}">{t["tiers"][tier]}</h2>'
+                   f'<div class="member-grid">{"".join(card(m, tier) for m in group)}</div></section>')
+    return "".join(out)
+
+
 def archive_html(lang):
     """All events across years, searchable and filterable (progressive enhancement: the list works without JS)."""
     t = UI[lang]
@@ -517,6 +591,8 @@ def main():
         for slug, (title, body_html) in rendered.items():
             if slug == "activities":
                 body_html += archive_html(lang)
+            if slug == "members":
+                body_html = members_html(lang)
             (cfg["out"] / f"{slug}.html").write_text(page(lang, slug, title, body_html), encoding="utf-8")
         (cfg["out"] / "index.html").write_text(home_page(lang), encoding="utf-8")
         count += len(slugs)

@@ -1,0 +1,64 @@
+# CCICF members — single source for the Korean and French member pages.
+# tier: honor | special | corporate | entrepreneur | individual
+# sector: key from `sectors` below (leave empty if unknown)
+# url: official website, only if verified
+# match: words that identify the member in the Korean event texts (used to list its events)
+
+sectors:
+  public:     {ko: "공공기관·국제기구", fr: "Institutions"}
+  transport:  {ko: "항공·운송·물류", fr: "Transport & logistique"}
+  auto:       {ko: "자동차·타이어", fr: "Automobile & pneumatiques"}
+  electronics: {ko: "전자", fr: "Électronique"}
+  health:     {ko: "바이오·헬스케어", fr: "Santé & biotechnologies"}
+  finance:    {ko: "금융·보험", fr: "Banque, finance & assurance"}
+  energy:     {ko: "에너지", fr: "Énergie"}
+  industry:   {ko: "소재·산업", fr: "Industrie & matériaux"}
+  advisory:   {ko: "법률·회계", fr: "Conseil juridique & audit"}
+  tourism:    {ko: "관광·여행", fr: "Tourisme & voyages"}
+
+members:
+  # Membres d'honneur
+  - {tier: honor, name: "Ambassade de la République de Corée en France", ko: "주 프랑스 대한민국 대사관", sector: public, url: "https://overseas.mofa.go.kr/fr-fr/index.do", match: ["대사관"]}
+  - {tier: honor, name: "OCDE", ko: "OECD 경제협력개발기구", sector: public, url: "https://www.oecd.org/en.html", match: ["OECD"]}
+
+  # Membres spéciaux
+  - {tier: special, name: "Cabinet Archè", ko: "법무법인 아르케", sector: advisory, url: "https://archelegal.com", match: ["아르케", "ARCHE", "Arche"]}
+  - {tier: special, name: "Asiana Airlines", ko: "아시아나항공", sector: transport, url: "https://flyasiana.com", match: ["아시아나"]}
+  - {tier: special, name: "FC Logistique", ko: "FC 로지스틱", sector: transport, url: "", match: ["FC 로지스틱", "FC Logistique"]}
+  - {tier: special, name: "Hyosung TNC", ko: "효성 TNC", sector: industry, url: "https://www.hyosungtnc.com/en", match: ["효성"]}
+  - {tier: special, name: "Hyundai Motor", ko: "현대자동차", sector: auto, url: "https://www.hyundai.com/fr/fr", match: ["현대자동차"]}
+  - {tier: special, name: "KEB Hana Bank", ko: "KEB 하나은행", sector: finance, url: "https://www.kebhana.com", match: ["하나은행", "하나외환"]}
+  - {tier: special, name: "Kia", ko: "기아", sector: auto, url: "https://www.kia.com/fr/", match: ["기아자동차"]}
+  - {tier: special, name: "KHNP – Korea Hydro & Nuclear Power", ko: "한국수력원자력", sector: energy, url: "https://www.khnp.co.kr/eng/index.do", match: ["한국수력원자력", "한수원"]}
+  - {tier: special, name: "Office National du Tourisme Coréen", ko: "한국관광공사", sector: tourism, url: "https://french.visitkorea.or.kr/svc/main/index.do", match: ["관광공사"]}
+  - {tier: special, name: "Korean Air", ko: "대한항공", sector: transport, url: "https://www.koreanair.com/fr/fr", match: ["대한항공"]}
+  - {tier: special, name: "KOTRA", ko: "대한무역투자진흥공사", sector: public, url: "https://www.kotra.or.kr/index.do", match: ["코트라", "KOTRA"]}
+  - {tier: special, name: "LEENAX", ko: "리낙스", sector: "", url: "", match: ["리낙스", "LEENAX"]}
+  - {tier: special, name: "LG Electronics", ko: "LG전자", sector: electronics, url: "https://www.lg.com/fr/", match: ["LG전자", "LG 전자"]}
+  - {tier: special, name: "Samsung Electronics", ko: "삼성전자", sector: electronics, url: "https://www.samsung.com/fr/", match: ["삼성전자", "삼성 전자"]}
+  - {tier: special, name: "Vatech", ko: "바텍", sector: health, url: "https://www.vatechnetworks.com", match: ["바텍"]}
+
+  # Membres entreprises
+  - {tier: corporate, name: "Celltrion", ko: "셀트리온", sector: health, url: "https://celltrion.com/en-us", match: ["셀트리온"]}
+  - {tier: corporate, name: "Co-France", ko: "코프랑스", sector: "", url: "", match: ["코프랑스"]}
+  - {tier: corporate, name: "Agence de voyages EPS", ko: "EPS 여행사", sector: tourism, url: "", match: ["EPS"]}
+  - {tier: corporate, name: "Forvis Mazars", ko: "포비스 마자르", sector: advisory, url: "https://www.forvismazars.com/group/en", match: ["Mazars", "마자르"]}
+  - {tier: corporate, name: "Hankook Tire", ko: "한국타이어", sector: auto, url: "https://www.hankooktire.com/fr/fr/home.html", match: ["한국타이어"]}
+  - {tier: corporate, name: "HMM (ex-Hyundai Merchant Marine)", ko: "현대상선 (HMM)", sector: transport, url: "https://www.hmm21.com/company.do", match: ["현대상선"]}
+  - {tier: corporate, name: "Korail", ko: "코레일", sector: transport, url: "https://www.korail.com/intro", match: ["코레일"]}
+  - {tier: corporate, name: "Export-Import Bank of Korea", ko: "한국수출입은행", sector: finance, url: "https://www.koreaexim.go.kr/index", match: ["수출입은행"]}
+  - {tier: corporate, name: "Korean Register", ko: "한국선급", sector: transport, url: "https://www.krs.co.kr/kor/", match: ["한국선급"]}
+  - {tier: corporate, name: "K-SURE – Korea Trade Insurance Corporation", ko: "한국무역보험공사", sector: finance, url: "https://www.ksure.or.kr", match: ["무역보험"]}
+  - {tier: corporate, name: "Kumho Tire", ko: "금호타이어", sector: auto, url: "", match: ["금호"]}
+  - {tier: corporate, name: "LX Pantos", ko: "LX판토스", sector: transport, url: "https://www.lxpantos.com/en/main.do", match: ["판토스"]}
+  - {tier: corporate, name: "NH Nonghyup", ko: "농협", sector: finance, url: "https://www.nonghyup.com", match: ["농협"]}
+  - {tier: corporate, name: "Pacific Creation", ko: "퍼시픽크리에이션", sector: "", url: "", match: ["퍼시픽"]}
+  - {tier: corporate, name: "Suhyup", ko: "수협", sector: finance, url: "https://en.suhyup.co.kr/suhyup-en/773/subview.do", match: ["수협"]}
+
+  # Membres entrepreneurs individuels
+  - {tier: entrepreneur, name: "Achillas", ko: "아킬라스", sector: "", url: "", match: ["아킬라스"]}
+  - {tier: entrepreneur, name: "BH Paris Média", ko: "BH 파리 미디어", sector: "", url: "", match: ["BH 파리"]}
+  - {tier: entrepreneur, name: "Échos de Corée", ko: "에코 드 코레", sector: "", url: "", match: ["에코 드 코레"]}
+
+  # Membres individuels
+  - {tier: individual, name: "KO Eun-gyeong, interprète de conférence", ko: "고은경 동시통역사", sector: "", url: "", match: []}
