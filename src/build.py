@@ -6,6 +6,7 @@ Edit the Markdown files in src/content/, then run:
 The HTML pages are written to the repository root (served by GitHub Pages).
 Requires: pip install markdown pyyaml beautifulsoup4
 """
+import hashlib
 import html
 import re
 from pathlib import Path
@@ -17,6 +18,11 @@ from bs4 import BeautifulSoup
 SRC = Path(__file__).resolve().parent
 CONTENT = SRC / "content"
 OUT = SRC.parent
+
+
+def asset_version(rel):
+    """Short content hash so browsers fetch updated CSS/JS instead of a cached copy."""
+    return hashlib.sha1((OUT / rel).read_bytes()).hexdigest()[:8]
 
 YEARS = ["2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017",
          "2016", "2015", "2014", "2013", "2012", "2011", "2005-2010"]
@@ -174,7 +180,7 @@ def page(slug, title, body_html, home=False):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={asset_version('assets/style.css')}">
 </head>
 <body class="{'home' if home else 'inner'} page-{slug}">
 <a class="skip" href="#main">본문 바로가기</a>
@@ -212,7 +218,7 @@ def page(slug, title, body_html, home=False):
   </div>
   <div class="wrap copy">Copyright CCICF All rights reserved</div>
 </footer>
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v={asset_version('assets/site.js')}" defer></script>
 </body>
 </html>
 """
