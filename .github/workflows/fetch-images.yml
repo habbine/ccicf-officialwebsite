@@ -1,0 +1,31 @@
+name: Fetch images from Wix
+
+# One-off migration: copies the photos still served by Wix into assets/media/
+# and rebuilds the site so pages use the local copies. Safe to re-run.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fetch-images.yml", "src/fetch_images.py"]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown pyyaml beautifulsoup4
+      - run: python src/fetch_images.py
+      - run: python src/build.py
+      - name: Commit images and rebuilt pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Self-host images (downloaded from Wix)"
+          git push

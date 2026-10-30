@@ -117,13 +117,27 @@ def asset_version(rel):
     return hashlib.sha1((OUT / rel).read_bytes()).hexdigest()[:8]
 
 
-def sized(url, w=1200):
-    """Resized Wix CDN URL for display; self-hosted images are returned unchanged."""
+def wix_id(url):
     m = re.match(r"https://static\.wixstatic\.com/media/([^/]+)$", url)
-    if not m:
+    return m.group(1) if m else None
+
+
+def sized(url, w=1200, root=""):
+    """Local copy in assets/media/ when it exists (see src/fetch_images.py), else a resized Wix CDN URL."""
+    fid = wix_id(url)
+    if not fid:
         return url
-    fid = m.group(1)
+    if (OUT / "assets" / "media" / fid).exists():
+        return f"{root}assets/media/{fid}"
     return f"https://static.wixstatic.com/media/{fid}/v1/fit/w_{w},h_{w},q_85/{fid}"
+
+
+def full_size(url, root=""):
+    """Target of the 'view larger' link: local copy if present, else the Wix original."""
+    fid = wix_id(url)
+    if fid and (OUT / "assets" / "media" / fid).exists():
+        return f"{root}assets/media/{fid}"
+    return url
 
 
 def parse_date(text, lang):
@@ -189,13 +203,14 @@ def render_body(body, lang, slug, title=""):
         else:
             h1.name = "h2"
 
+    root = LANGS[lang]["root"]
     for img in soup.find_all("img"):
         orig = img["src"]
-        img["src"] = sized(orig, 1000)
+        img["src"] = sized(orig, 1000, root)
         img["loading"] = "lazy"
         img["decoding"] = "async"
         if img.parent.name != "a":
-            a = soup.new_tag("a", href=orig, target="_blank", rel="noopener")
+            a = soup.new_tag("a", href=full_size(orig, root), target="_blank", rel="noopener")
             a["class"] = "img-link"
             img.wrap(a)
 
@@ -387,7 +402,7 @@ def page(lang, slug, title, body_html, home=False):
 {alt}
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{html.escape(t['description'])}">
-<meta property="og:image" content="{sized(HERO, 1200)}">
+<meta property="og:image" content="{(SITE + '/' + sized(HERO, 1200)) if not sized(HERO, 1200).startswith('http') else sized(HERO, 1200)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{'ko_KR' if lang == 'ko' else 'fr_FR'}">
 <link rel="icon" type="image/svg+xml" href="{root}assets/img/favicon.svg">
@@ -446,7 +461,7 @@ def home_page(lang):
     body = re.sub(r"^Chambre de Commerce & d'Industrie\s*\nCorée France\s*\n", "", body.lstrip(), count=1)
     body = body.lstrip().replace(f"![]({HERO})", "", 1)
     rendered = render_body(body, lang, "index", "CCICF")
-    hero = f"""<section class="hero" style="--hero:url('{sized(HERO, 1900)}')">
+    hero = f"""<section class="hero" style="--hero:url('{sized(HERO, 1900, LANGS[lang]["root"])}')">
   <div class="wrap hero-inner">
     <p class="eyebrow">{'Chambre de Commerce et d&#39;Industrie Corée France' if lang == 'ko' else '주 프랑스 한불상공회의소'}</p>
     <h1>{t['hero_h1']}</h1>
