@@ -41,7 +41,7 @@ members:
   # Membres entreprises
   - {tier: corporate, name: "Celltrion", ko: "셀트리온", sector: health, url: "https://celltrion.com/en-us", match: ["셀트리온"]}
   - {tier: corporate, name: "Co-France", ko: "코프랑스", sector: "", url: "", match: ["코프랑스"]}
-  - {tier: corporate, name: "Agence de voyages EPS", ko: "EPS 여행사", sector: tourism, url: "", match: ["EPS"]}
+  - {tier: corporate, name: "Agence de voyages EPS", ko: "EPS 여행사", sector: tourism, url: "https://eparisseoul.fr/", match: ["EPS"]}
   - {tier: corporate, name: "Forvis Mazars", ko: "포비스 마자르", sector: advisory, url: "https://www.forvismazars.com/group/en", match: ["Mazars", "마자르"]}
   - {tier: corporate, name: "Hankook Tire", ko: "한국타이어", sector: auto, url: "https://www.hankooktire.com/fr/fr/home.html", match: ["한국타이어"]}
   - {tier: corporate, name: "HMM (ex-Hyundai Merchant Marine)", ko: "현대상선 (HMM)", sector: transport, url: "https://www.hmm21.com/company.do", match: ["현대상선"]}
