@@ -31,3 +31,6 @@ Chaque année, la CCICF participe à de grands événements internationaux tels 
 
 Elle organise également des programmes de visites de sites industriels en région, afin de permettre à ses membres de découvrir plus directement la vie politique, culturelle et économique de la France.
 
+
+
+En 2026, nous renforcerons notre engagement en faveur d’une meilleure intégration des Coréens dans la vie professionnelle et sociale en France.
