@@ -67,6 +67,8 @@ CCI France-Corée(CCICF)는 회계법인 Yavrouyan과 함께 주프랑스 대한
 - **장소:** Salon Grand Opéra
 
 
+## 사진으로 보는 CCICF
+
 ![](https://static.wixstatic.com/media/dfe178_b8efcf5af72d4a55bf4a100895349358~mv2.png)
 ![](https://static.wixstatic.com/media/dfe178_f587ed6ccaed4460948a866145d086a6~mv2.jpg)
 ![](https://static.wixstatic.com/media/dfe178_b85090c549d04a6eb3a589bec8a43f67~mv2.png)
