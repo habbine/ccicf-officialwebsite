@@ -48,6 +48,14 @@ En 2026, année Eulsa, nous redoublerons d'efforts pour contribuer plus encore �
 
 - **Date :** vendredi 16 octobre 2026
 
+Le 16 octobre 2026, l'Assemblée nationale française à Paris a accueilli un symposium célébrant les 140 ans des relations diplomatiques entre la France et la Corée. Des responsables politiques, diplomatiques et économiques s'y sont réunis pour revenir sur une histoire partagée et s'interroger sur l'avenir de cette coopération.
+
+Les relations remontent à 1886, date du premier traité signé entre la France et la dynastie Joseon. Depuis, les deux pays ont tissé des liens dans la culture, le commerce et l'industrie. Aujourd'hui, cette histoire constitue un socle plutôt qu'un aboutissement.
+
+La question centrale du symposium était simple : quel avenir pouvons-nous construire ensemble ? Trois thèmes sont ressortis : la coopération économique, l'innovation et les technologies, et les échanges humains et culturels.
+
+Les anniversaires sont l'occasion de faire le point. Le travail véritable commence ensuite, dans des projets concrets, des partenariats et la volonté des professionnels de les mener. Merci à tous ceux qui ont contribué à cette étape. Continuons à construire.
+
 ### 22e assemblée générale annuelle
 
 - **Lieu :** Salon Grand Opéra
