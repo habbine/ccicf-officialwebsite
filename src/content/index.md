@@ -44,6 +44,12 @@ CCICF 한불상공회의소는 프랑스에 진출한 한국 기업들을 중심
 - **일시:** 2026년 4월 28일, 17:00–18:30
 - **장소:** 주프랑스 대한민국 영사관 (Consulat de Corée du Sud en France), 22 Avenue d'Iéna, 75116 Paris
 
+CCI France-Corée(CCICF)는 회계법인 Yavrouyan과 함께 주프랑스 대한민국 영사관에서 전자 인보이스를 주제로 한 세미나를 개최했습니다.
+
+전자 인보이스는 기업이 송장을 발행하고, 전송하고, 보관하는 방식을 바꾸고 있습니다. 한국과 프랑스 기업에게는 사내 업무 체계, 도구, 규정 준수, 양국 거래 파트너와의 정보 교환 등 구체적인 과제가 따릅니다.
+
+이번 세미나는 이러한 주제를 점검하고 참석자들이 실무자로서 의견을 나누는 자리였습니다. 한국과 프랑스 간 비즈니스 관계를 증진한다는 CCICF의 취지를 담았습니다.
+
 ### France-Corée : 140 ans d'histoire et d'amitié partagées
 
 - **일시:** 2026년 10월 16일(금)
@@ -60,12 +66,6 @@ CCICF 한불상공회의소는 프랑스에 진출한 한국 기업들을 중심
 
 - **장소:** Salon Grand Opéra
 
-
-## 소셜 미디어
-
-주 프랑스 한불 상공회의소 공식 링크딘 및 인스타그램 계정 개시
-
-<!--FOLLOW-->
 
 ![](https://static.wixstatic.com/media/dfe178_b8efcf5af72d4a55bf4a100895349358~mv2.png)
 ![](https://static.wixstatic.com/media/dfe178_f587ed6ccaed4460948a866145d086a6~mv2.jpg)

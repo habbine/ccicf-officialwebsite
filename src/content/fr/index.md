@@ -44,6 +44,12 @@ En 2026, année Eulsa, nous redoublerons d'efforts pour contribuer plus encore �
 - **Date :** 28 avril 2026, 17 h 00 – 18 h 30
 - **Lieu :** Consulat de Corée du Sud en France, 22 avenue d'Iéna, 75116 Paris
 
+La CCI France-Corée (CCICF) a organisé un séminaire consacré à la facturation électronique, au Consulat de Corée du Sud en France, en partenariat avec le cabinet d'expertise comptable Yavrouyan.
+
+La facturation électronique transforme la manière dont les entreprises émettent, transmettent et archivent leurs factures. Pour les entreprises franco-coréennes, elle soulève des questions concrètes : organisation interne, outils, conformité et échanges avec les partenaires des deux pays.
+
+Ce séminaire a permis de faire le point sur ces sujets et d'échanger entre professionnels, dans l'esprit de la CCICF : faciliter les relations d'affaires entre la France et la Corée.
+
 ### France-Corée : 140 ans d'histoire et d'amitié partagées
 
 - **Date :** vendredi 16 octobre 2026
@@ -60,12 +66,6 @@ Les anniversaires sont l'occasion de faire le point. Le travail véritable comme
 
 - **Lieu :** Salon Grand Opéra
 
-
-## Réseaux sociaux
-
-Lancement des comptes officiels LinkedIn et Instagram de la Chambre de Commerce et d'Industrie Corée France
-
-<!--FOLLOW-->
 
 ![](https://static.wixstatic.com/media/dfe178_b8efcf5af72d4a55bf4a100895349358~mv2.png)
 ![](https://static.wixstatic.com/media/dfe178_f587ed6ccaed4460948a866145d086a6~mv2.jpg)
