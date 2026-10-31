@@ -390,11 +390,19 @@ def url_for(lang, slug):
 
 
 def lang_switch(lang, slug):
-    other = "fr" if lang == "ko" else "ko"
-    href = ("fr/" if other == "fr" else "../") + ("index.html" if slug == "index" else f"{slug}.html")
-    code = "FR" if other == "fr" else "KO"
-    return (f'<a class="lang-switch" href="{href}" hreflang="{other}" lang="{other}" '
-            f'aria-label="{LANGS[other]["label"]}">{code}<span class="lang-full"> · {LANGS[other]["label"]}</span></a>')
+    """Both languages always visible; the current one is marked, the other is a link."""
+    codes = {"ko": "KR", "fr": "FR"}
+    page_file = "index.html" if slug == "index" else f"{slug}.html"
+    items = []
+    for l in ("ko", "fr"):
+        label = (f'<span class="lang-code" aria-hidden="true">{codes[l]}</span>'
+                 f'<span class="lang-full">{LANGS[l]["label"]}</span>')
+        if l == lang:
+            items.append(f'<span class="lang-opt is-current" aria-current="true" lang="{l}">{label}</span>')
+        else:
+            href = ("fr/" if l == "fr" else "../") + page_file
+            items.append(f'<a class="lang-opt" href="{href}" hreflang="{l}" lang="{l}">{label}</a>')
+    return f'<span class="lang-switch">{"".join(items)}</span>'
 
 
 def page(lang, slug, title, body_html, home=False):

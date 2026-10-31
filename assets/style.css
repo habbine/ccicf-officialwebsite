@@ -1434,11 +1434,18 @@ a:hover { color: var(--red); }
 /* Language switch */
 .bar-right { display: flex; align-items: center; gap: 8px; }
 .lang-switch {
-  display: inline-flex; align-items: center; min-height: 40px; padding: 6px 12px; border: 1.5px solid var(--brand-blue);
-  border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--brand-blue); text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: stretch; padding: 3px; gap: 2px; border: 1.5px solid var(--brand-blue);
+  border-radius: 999px; background: #fff; white-space: nowrap;
 }
-.lang-switch:hover, .lang-switch:focus-visible { background: var(--brand-blue); color: #fff; }
+.lang-opt {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 4px 12px; border-radius: 999px;
+  font-size: 14px; font-weight: 600; color: var(--brand-blue); text-decoration: none;
+}
+a.lang-opt:hover, a.lang-opt:focus-visible { background: #e6f0f8; text-decoration: underline; }
+.lang-opt.is-current { background: var(--brand-blue); color: #fff; cursor: default; }
+.lang-code { font-weight: 700; letter-spacing: .02em; }
 .lang-full { font-weight: 500; }
+.lang-code { display: none; }
 .lang-fr .brand .name { font-size: 12px; }
 
 /* Visible keyboard focus everywhere */
@@ -1483,7 +1490,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .todo { background: #fff4d6; border-bottom: 2px solid #c98a00; padding: 0 3px; }
 
 @media (max-width: 860px) {
-  .lang-full { display: none; }
+  .lang-full { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .lang-code { display: inline; }
+  .lang-opt { padding: 4px 11px; }
   .bar { position: relative; }
 }
 
